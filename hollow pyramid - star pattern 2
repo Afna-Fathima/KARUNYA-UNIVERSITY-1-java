@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+        if (n <= 0) return;
+
+        for (int i = 1; i <= n; i++) {
+            // leading spaces
+            for (int s = 0; s < n - i; s++) System.out.print(" ");
+
+            if (i == 1) {
+                // top single star
+                System.out.println("*");
+            } else if (i == n) {
+                // bottom full row of stars (2*n - 1)
+                for (int k = 0; k < 2 * n - 1; k++) System.out.print("*");
+                System.out.println();
+            } else {
+                // middle hollow rows: star, inner spaces, star
+                System.out.print("*");
+                int innerSpaces = 2 * i - 3;
+                for (int k = 0; k < innerSpaces; k++) System.out.print(" ");
+                System.out.println("*");
+            }
+        }
+        sc.close();
+    }
+}
