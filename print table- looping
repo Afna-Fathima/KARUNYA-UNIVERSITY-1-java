@@ -1,0 +1,14 @@
+import java.util.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int multiplicand = sc.nextInt();  // the number whose table we need
+        int n = sc.nextInt();             // how many times
+        
+        for (int i = 1; i <= n; i++) {
+            System.out.println(i + " * " + multiplicand + " = " + (i * multiplicand));
+        }
+    }
+}
