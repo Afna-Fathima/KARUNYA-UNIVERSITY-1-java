@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        int totalRows = 2 * n - 1;
+
+        for (int i = 0; i < totalRows; i++) {
+            int row = i < n ? i : totalRows - i - 1; // mirror logic
+
+            // leading spaces
+            for (int s = 0; s < row; s++) {
+                System.out.print(" ");
+            }
+
+            // print stars with inner spaces
+            if (row == n - 1) {
+                // middle row has only one star
+                System.out.print("*");
+            } else {
+                System.out.print("*");
+                int innerSpaces = 2 * (n - row - 1) - 1;
+                for (int sp = 0; sp < innerSpaces; sp++) {
+                    System.out.print(" ");
+                }
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+    }
+}
