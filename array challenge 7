@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int sum = 0;
+        int result[] = new int[n];
+
+        // Traverse from right to left
+        for (int i = n - 1; i >= 0; i--) {
+            result[i] = sum;   // assign sum of right side
+            sum += arr[i];     // update sum
+        }
+
+        // Print result
+        for (int i = 0; i < n; i++) {
+            System.out.print(result[i]);
+            if (i < n - 1) System.out.print(" ");
+        }
+    }
+}
